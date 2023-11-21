@@ -1,4 +1,7 @@
+import Popup from 'reactjs-popup'
+
 import CartContext from '../../context/CartContext'
+import CheckOutPopup from '../CheckoutPopup'
 
 import './index.css'
 
@@ -19,13 +22,35 @@ const CartSummary = () => (
               /-
             </h1>
             <p className="total-items">{cartList.length} Items in cart</p>
-            <button type="button" className="checkout-button d-sm-none">
-              Checkout
-            </button>
+
+            <div>
+              <Popup
+                trigger={
+                  <button
+                    type="button"
+                    className="checkout-button d-sm-none w-50"
+                  >
+                    Checkout
+                  </button>
+                }
+                position="top right"
+              >
+                <CheckOutPopup total={total} item={cartList} />
+              </Popup>
+            </div>
+            <div>
+              <Popup
+                trigger={
+                  <button type="button" className="checkout-button d-lg-none">
+                    Checkout
+                  </button>
+                }
+                position="top center"
+              >
+                <CheckOutPopup total={total} item={cartList} />
+              </Popup>
+            </div>
           </div>
-          <button type="button" className="checkout-button d-lg-none">
-            Checkout
-          </button>
         </>
       )
     }}
