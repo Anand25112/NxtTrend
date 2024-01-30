@@ -57,7 +57,7 @@ class LoginForm extends Component {
     return (
       <>
         <label className="input-label" htmlFor="password">
-          PASSWORD
+          PASSWORD<span> (rahul@2021)</span>
         </label>
         <input
           type="password"
@@ -77,7 +77,7 @@ class LoginForm extends Component {
     return (
       <>
         <label className="input-label" htmlFor="username">
-          USERNAME
+          USERNAME<span> (rahul)</span>
         </label>
         <input
           type="text"
